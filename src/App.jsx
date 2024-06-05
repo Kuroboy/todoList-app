@@ -25,10 +25,25 @@ const App = () => {
       <div className='flex items-center justify-center h-screen'>
         <div className='card border-double border-4 border-cyan-400 shadow-2xl'>
           <div className='card-body'>
+
+            <h1 className='text-3xl mb-4 text-center font-bold '>Todo List </h1>
+            <TodoForm />
+            
+            <div className="collapse bg-base-200">
+              <input type="checkbox" className="peer" /> 
+              <div className="collapse-title bg-cyan-400  peer-checked:bg-cyan-400 peer-checked:text-secondary-content">
+                Click to Check Your List
+              </div>
+              <div className="collapse-content bg-cyan-100 text-cyan-900 peer-checked:bg-cyan-100 peer-checked:text-cyan-900"> 
+                <TodoList todos={todos}/>
+              </div>
+            </div>
+
             <h1 className='text-3xl mb-4 text-center font-bold text-3xl'>Todo List App</h1>
             <TodoForm />
             
             <TodoList todos={todos}/>
+
           </div>
         </div>
       </div>
@@ -37,3 +52,4 @@ const App = () => {
 }
 
 export default App;
+
