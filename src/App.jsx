@@ -25,6 +25,7 @@ const App = () => {
       <div className='flex items-center justify-center h-screen'>
         <div className='card border-double border-4 border-cyan-400 shadow-2xl'>
           <div className='card-body'>
+
             <h1 className='text-3xl mb-4 text-center font-bold '>Todo List </h1>
             <TodoForm />
             
@@ -37,6 +38,12 @@ const App = () => {
                 <TodoList todos={todos}/>
               </div>
             </div>
+
+            <h1 className='text-3xl mb-4 text-center font-bold text-3xl'>Todo List App</h1>
+            <TodoForm />
+            
+            <TodoList todos={todos}/>
+
           </div>
         </div>
       </div>
@@ -45,3 +52,4 @@ const App = () => {
 }
 
 export default App;
+
