@@ -25,7 +25,7 @@ const App = () => {
       <div className='flex items-center justify-center h-screen'>
         <div className='card border-double border-4 border-cyan-400 shadow-2xl'>
           <div className='card-body'>
-            <h1 className='text-3xl mb-4 text-center font-bold '>Todo List App</h1>
+            <h1 className='text-3xl mb-4 text-center font-bold '>Todo List </h1>
             <TodoForm />
             
             <div className="collapse bg-base-200">
