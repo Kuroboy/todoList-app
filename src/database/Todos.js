@@ -1,35 +1,31 @@
-let todos =[
-    {id: 1, text: 'Learn React', done: false},
-    {id: 2, text: 'Learn JavaScript', done:false}
-];
-
-const getTodos =()=>{
+let todos = [];
+  
+  const getTodos = () => {
     return todos;
-}
-
-const changeTodoStatus =(todoId)=>{
-    todos = todos.map((todo)=>{
-        if(todo.id === todoId){
-            todo.done = !todo.done;
-        }
-
-        return todos;
+  }
+  
+  const changeTodoStatus = (todoId) => {
+    todos = todos.map((todo) => {
+      if (todo.id === todoId) {
+        return { ...todo, done: !todo.done }; // Mengembalikan todo yang diperbarui
+      }
+      return todo;
     });
-};
 
-const deleteTodo = (id) =>{
-    todos = todos.filter((todo)=> todo.id !==id)
+    return todos
+  };
+  
+  const deleteTodo = (id) => {
+    todos = todos.filter((todo) => todo.id !== id);
 
-    return todos;
-}
+    return todos
+  };
+  
+  const addTodo = (text) => {
+    todos = [...todos, { id: todos.length + 1, text, done: false }];
 
-const addTodo =(text)=>{
-    todos = todos.concat({
-        id: todos.length +1,
-        text,
-        done: false
-    });
-    return todos;
-}
-
-export {getTodos, changeTodoStatus, deleteTodo, addTodo};
+    return todos
+  };
+  
+  export { getTodos, changeTodoStatus, deleteTodo, addTodo };
+  

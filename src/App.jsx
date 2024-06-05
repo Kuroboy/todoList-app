@@ -1,6 +1,6 @@
-import {createContext, useState} from 'react';
-import { getTodos, addTodo, deleteTodo, changeTodoStatus, } from './database/Todos';
-import TodoForm from './components/TodoForm'
+import { createContext, useState } from 'react';
+import { getTodos, addTodo, deleteTodo, changeTodoStatus } from './database/Todos';
+import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
 export const TodoContext = createContext();
@@ -21,14 +21,14 @@ const App = () => {
   };
 
   return (
-    <TodoContext.Provider value={{ handleStatus, handleDelete, handleAdd}}>
-      <div className='h-screen flex item-center justify-center flex-col'>
-        <div className='card border-double border-4 border-gray-600'>
+    <TodoContext.Provider value={{ handleStatus, handleDelete, handleAdd }}>
+      <div className='flex items-center justify-center h-screen'>
+        <div className='card border-double border-4 border-cyan-400 shadow-2xl'>
           <div className='card-body'>
-            <h1 className='text-3xl mb-4'>Todo List App</h1>
-              <TodoForm />
-
-              <TodoList todos={todos}/>
+            <h1 className='text-3xl mb-4 text-center font-bold text-3xl'>Todo List App</h1>
+            <TodoForm />
+            
+            <TodoList todos={todos}/>
           </div>
         </div>
       </div>
