@@ -1,20 +1,19 @@
 import React, { useContext, useState } from 'react';
-import { TodoContext } from '../App';
+import { TodoContext } from '../App'; 
 
 const TodoForm = () => {
   const [text, setText] = useState('');
-  const [error, setError] = useState('');
   const { handleAdd } = useContext(TodoContext);
 
   const handleInputText = (e) => {
     setText(e.target.value);
-    setError(''); 
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim() === '') {
-      setError('Please enter a todo.'); 
+    if (!text.trim()) {
+      // Display an error message if the input is empty
+      alert('Please enter a todo');
       return;
     }
     handleAdd(text);
@@ -22,18 +21,15 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center mt-4">
+    <form onSubmit={handleSubmit}>
       <input
         onChange={handleInputText}
         type="text"
-        className="input input-bordered input-accent border-cyan-500 rounded-xl font-semibold flex-1 mr-2"
+        className="input input-bordered input-accent border-cyan-500 rounded-xl font-semibold"
         placeholder="Enter a ToDo"
         value={text}
       />
-      <button type="submit" className="btn btn-outline btn-info rounded-xl">
-        Add
-      </button>
-      {error && <p className="text-red-500 ml-2">{error}</p>} 
+      <button type="submit" className="btn btn-outline btn-info ml-2 rounded-xl">Add</button>
     </form>
   );
 };
