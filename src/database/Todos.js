@@ -7,7 +7,7 @@ let todos = [];
   const changeTodoStatus = (todoId) => {
     todos = todos.map((todo) => {
       if (todo.id === todoId) {
-        return { ...todo, done: !todo.done }; // Mengembalikan todo yang diperbarui
+        return { ...todo, done: !todo.done }; 
       }
       return todo;
     });
