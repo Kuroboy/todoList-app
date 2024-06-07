@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
+
 import { TodoContext } from '../App'; 
+
 
 const TodoForm = () => {
   const [text, setText] = useState('');
@@ -29,7 +31,11 @@ const TodoForm = () => {
         placeholder="Enter a ToDo"
         value={text}
       />
+
       <button type="submit" className="btn btn-outline btn-info ml-2 rounded-xl">Add</button>
+
+      {error && <p className="text-red-500 ml-2">{error}</p>} 
+
     </form>
   );
 };

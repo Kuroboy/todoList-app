@@ -90,6 +90,12 @@ const App = () => {
                 </div>
               </div>
             </div>
+
+            <h1 className='text-3xl mb-4 text-center font-bold text-3xl'>Todo List App</h1>
+            <TodoForm />
+            
+            <TodoList todos={todos}/>
+
           </div>
         )}
         <Footer />
@@ -99,3 +105,4 @@ const App = () => {
 };
 
 export default App;
+
